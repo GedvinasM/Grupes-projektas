@@ -13,7 +13,7 @@ function Login() {
   Axios.defaults.withCredentials = true;
 
   const login = () => {
-    Axios.post("http://localhost:3001/user/login", {
+    Axios.post("/api/user/login", {
       username: name,
       password: password,
     }).then((response) => {

@@ -6,7 +6,7 @@ function Navigation() {
   var loggedIn = localStorage.getItem("loggedIn");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/user/login").then((response) => {
+    Axios.get("/api/user/login").then((response) => {
       if (response.data.loggedIn == true) {
         loggedIn = true;
       } else {
@@ -21,6 +21,8 @@ function Navigation() {
     <div className="main">
       <Link to="/">Home</Link>
       <br />
+      <Link to="/play">Play</Link>
+      <br />
       {loggedIn === "false" ? (
         <>
           <Link to="/login">Login</Link>
@@ -31,8 +33,6 @@ function Navigation() {
         </>
       ) : (
         <>
-          <Link to="/play">Play</Link>
-          <br />
           <Link to="/logout">Logout</Link>
           <br />
         </>

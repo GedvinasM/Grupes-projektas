@@ -1,4 +1,0 @@
-# Minuslavejas
-Grupinio projekto repozitorija
-
-
