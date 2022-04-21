@@ -1,0 +1,38 @@
+table,
+tr,
+th {
+  border: 0;
+  padding: 0px;
+}
+
+.line {
+  position: relative;
+  display: block;
+  padding: 12.5px;
+}
+.closed {
+  background-image: url(./img/closed.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+}
+.opened {
+  background-image: url(./img/type0.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+}
+.game {
+  display: inline-block;
+}
+
+.cellStyle {
+  background-size: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 25px;
+  
+}
