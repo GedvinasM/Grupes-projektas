@@ -21,11 +21,6 @@ function Navigation() {
   return (
     <nav className="MenuBarItems">
       <ul className="MenuBar">
-        <li>
-          <Link className="navigation-links" to="/play">
-            Play
-          </Link>
-        </li>
         {loggedIn === "false" ? (
           <>
             <li>
@@ -47,8 +42,8 @@ function Navigation() {
         ) : (
           <>
             <li>
-              <Link className="navigation-links" to="/leaderboard">
-                Leaderboard
+              <Link className="navigation-links" to="/home">
+                Home
               </Link>
             </li>
             <li>

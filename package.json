@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
+    "local": "npm install --prefix client && npm run build --prefix client && node index.js"
   },
   "dependencies": {
     "axios": "^0.26.1",

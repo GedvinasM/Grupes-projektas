@@ -19,7 +19,7 @@ function Login() {
     }).then((response) => {
       if (response.data.loggedIn) {
         localStorage.setItem("loggedIn", true);
-        history.push("/");
+        window.location.replace("/");
       } else {
         setErrorMessage(response.data.message);
       }
@@ -28,9 +28,9 @@ function Login() {
   return (
     <div className="App">
       <div className="login">
-        <h1>Prisijungimas</h1>
+        <h1>Log in</h1>
         <h2 style={{ color: "red" }}>{errorMessage}</h2>
-        <label>Vardas: </label>
+        <label>Username: </label>
         <input
           type="text"
           onChange={(e) => {
@@ -38,7 +38,7 @@ function Login() {
           }}
         />
         <br></br>
-        <label>Slaptažodis: </label>
+        <label>Password: </label>
         <input
           type="password"
           onChange={(e) => {
@@ -46,7 +46,7 @@ function Login() {
           }}
         />
         <br></br>
-        <button onClick={login}> Prisijungti </button>
+        <button onClick={login}> Log in </button>
       </div>
     </div>
   );

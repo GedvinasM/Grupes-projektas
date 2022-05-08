@@ -7,8 +7,11 @@ function Cell({ details, updateFlag, openCell }) {
     backgroundImage: details.flag
       ? `url(${ClosedFlag})`
       : details.opened
-      ? `url(${Opened})`
+      ? details.value === "X"
+        ? `url(${Mine})`
+        : `url(${Opened})`
       : `url(${Closed})`,
+    color: numColorCode(details.value),
   };
   return (
     <div
@@ -17,9 +20,33 @@ function Cell({ details, updateFlag, openCell }) {
       onContextMenu={(e) => updateFlag(e, details.x, details.y)}
       className="cellStyle"
     >
-      {details.opened ? (details.value === "0" ? details.value : "") : ""}
+      <b>
+        {details.opened
+          ? details.value === 0 || details.value === "X"
+            ? ""
+            : details.value
+          : ""}
+      </b>
     </div>
   );
 }
+
+const numColorCode = (num) => {
+  if (num === 1) {
+    return "#1976d2";
+  } else if (num === 2) {
+    return "#388d3c";
+  } else if (num === 3) {
+    return "#d33030";
+  } else if (num === 4) {
+    return "#7c21a2";
+  } else if (num === 5) {
+    return "#1976d2";
+  } else if (num === 6) {
+    return "#1976d2";
+  } else {
+    return "white";
+  }
+};
 
 export default Cell;

@@ -6,7 +6,7 @@ import {
   Forgot,
   Register,
   Navigation,
-  Play,
+  CheckPage,
   Logout,
 } from "./pages";
 import Axios from "axios";
@@ -28,11 +28,11 @@ function App() {
     <Router>
       <div className="App">
         <Navigation />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={CheckPage} />
+        <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/forgot-password" component={Forgot} />
-        <Route path="/play" component={Play} />
         <Route path="/logout" component={Logout} />
       </div>
     </Router>

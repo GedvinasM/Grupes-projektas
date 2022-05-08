@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from "react";
-import Axios from "axios";
+import "../App.css";
+import Board from "../components/board";
 
 function Home() {
-  useEffect(() => {
-    if (!localStorage.getItem("loggedIn")) {
-      localStorage.setItem("loggedIn", false);
-    }
-  }, []);
+  const [visible, setVisible] = useState(false);
+
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Minų šlavėjas</h1>
+      {visible ? (
+        <>
+          <div>
+            <Board />
+          </div>
+        </>
+      ) : (
+        <>
+          <button onClick={() => setVisible(true)}> Play </button>
+        </>
+      )}
     </div>
   );
 }
