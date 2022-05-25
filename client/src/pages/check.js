@@ -3,6 +3,10 @@ import "../App.css";
 
 function Check() {
   var loggedIn = localStorage.getItem("loggedIn");
+  if (loggedIn === undefined || loggedIn === null) {
+    localStorage.setItem("loggedIn", false);
+  }
+
   return (
     <div>
       <h1>Loading</h1>
